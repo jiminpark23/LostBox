@@ -55,6 +55,7 @@ public class LoginActivity extends AppCompatActivity {
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
                             finish();   // 현재 액티비티 파괴
+                            Toast.makeText(LoginActivity.this, "로그인에 성공하셨습니다", Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(LoginActivity.this, "로그인 실패", Toast.LENGTH_SHORT).show();
                         }
@@ -65,26 +66,27 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-                AppCompatButton btn_log = findViewById(R.id.btn_login);
-        TextView sign = findViewById(R.id.tv_signup);
-
-        btn_log.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-
-            }
-        });
-
-        sign.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
-                startActivity(intent);
-            }
-        });
+//                AppCompatButton btn_log = findViewById(R.id.btn_login);
+//        TextView sign = findViewById(R.id.tv_signup);
+//
+//        btn_log.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+//                startActivity(intent);
+//
+//            }
+//        });
+//
+//        sign.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+//                startActivity(intent);
+//
+//            }
+//        });
 
 
     }
