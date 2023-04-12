@@ -1,6 +1,7 @@
 package com.example.lostbox;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -57,17 +58,21 @@ public class SignupActivity extends AppCompatActivity {
                    public void onComplete(@NonNull Task<AuthResult> task) {
                        if (task.isSuccessful()) {
                            FirebaseUser firebaseUser = mFirebaseAuth.getCurrentUser();
+                           Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                           startActivity(intent);
+
                            UserAccount account = new UserAccount();
                            account.setIdToken(firebaseUser.getUid());
                            account.setEmailId(firebaseUser.getEmail());
                            account.setPassword(strPwd);
-                           account.setPassword(strName);
-                           account.setPassword(strId);
-                           account.setPassword(strPhone);
+                           account.setName(strName);
+                           account.setId(strId);
+                           account.setPhone(strPhone);
 
                            // setValue : database에 insert(삽입)하는 행위
                            mDatabaseRef.child("UserAccount").child(firebaseUser.getUid()).setValue(account);
 
+                           finish();   // 현재 액티비티 파괴
                            Toast.makeText(SignupActivity.this, "회원가입에 성공하셨습니다", Toast.LENGTH_SHORT).show();
                        } else {
                            Toast.makeText(SignupActivity.this, "회원가입에 실패하셨습니다", Toast.LENGTH_SHORT).show();

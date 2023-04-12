@@ -65,28 +65,14 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-
-//                AppCompatButton btn_log = findViewById(R.id.btn_login);
-//        TextView sign = findViewById(R.id.tv_signup);
-//
-//        btn_log.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-//                startActivity(intent);
-//
-//            }
-//        });
-//
-//        sign.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
-//                startActivity(intent);
-//
-//            }
-//        });
+        TextView signup = findViewById(R.id.tv_signup);
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
