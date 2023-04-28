@@ -1,16 +1,17 @@
 package com.example.lostbox;
 
-import android.app.Fragment;
+//import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.fragment.app.Fragment;
 
 import androidx.annotation.Nullable;
 
-public class MyPage extends Fragment {
+public class MyPageFragment extends Fragment {
 
-    public MyPage() {
+    public MyPageFragment() {
 
     }
 
