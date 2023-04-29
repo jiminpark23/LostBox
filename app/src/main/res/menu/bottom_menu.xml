@@ -3,24 +3,24 @@
     <item
         android:id="@+id/action_find"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_mood_bad_24"
-        android:title="찾아요"/>
+        android:icon="@drawable/search"
+        android:title="찾아요" />
 
     <item
         android:id="@+id/action_found"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_mood_24"
-        android:title="찾았어요"/>
+        android:icon="@drawable/found"
+        android:title="찾았어요" />
 
     <item
         android:id="@+id/action_chat"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_chat_bubble_outline_24"
-        android:title="채팅"/>
+        android:icon="@drawable/chat"
+        android:title="채팅" />
 
     <item
         android:id="@+id/action_myPage"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_person_outline_24"
-        android:title="마이페이지"/>
+        android:icon="@drawable/mypage_ic"
+        android:title="마이페이지" />
 </menu>
