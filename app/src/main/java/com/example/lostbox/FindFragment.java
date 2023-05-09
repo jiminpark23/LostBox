@@ -8,12 +8,18 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class FindFragment extends Fragment {
 
-    public FindFragment() {
+    private RecyclerView adapter;
+   public FindFragment(){
 
-    }
+   }
+
+
+
+
 
 
     @Nullable
@@ -21,4 +27,6 @@ public class FindFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_find, container, false);
     }
+
+
 }
