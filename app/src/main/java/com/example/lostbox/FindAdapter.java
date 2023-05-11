@@ -12,13 +12,13 @@ import java.util.ArrayList;
 
 public class FindAdapter extends RecyclerView.Adapter<FindAdapter.ViewHolder> {
     private ArrayList<FindItem> findItems = new ArrayList<>(); // adapter에 들어갈 list
-    private Context context;
+//    private Context context;
 
-    public FindAdapter(ArrayList<FindItem> findItems, Context context) {
-        this.findItems = findItems;
-        this.context = context;
-
-    }
+//    public FindAdapter(ArrayList<FindItem> findItems, Context context) {
+//        this.findItems = findItems;
+//        this.context = context;
+//
+//    }
 
     @NonNull
     @Override
@@ -29,13 +29,14 @@ public class FindAdapter extends RecyclerView.Adapter<FindAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {  // 아이템을 하나, 하나 보여주는 함수?
-        FindItem currentItem = findItems.get(position);
+//        FindItem currentItem = findItems.get(position);
+        holder.onBind(findItems.get(position));
 
-        holder.imageView.setImageResource(currentItem.getImg());
-        holder.textView1.setText(currentItem.getTitle());
-        holder.textView2.setText(currentItem.getPlace());
-        holder.textView3.setText(currentItem.getDate());
-        holder.textView4.setText(currentItem.getContent());
+//        holder.imageView.setImageResource(currentItem.getImg());
+//        holder.textView1.setText(currentItem.getTitle());
+//        holder.textView2.setText(currentItem.getPlace());
+//        holder.textView3.setText(currentItem.getDate());
+//        holder.textView4.setText(currentItem.getContent());
     }
 
     @Override
