@@ -1,15 +1,19 @@
 package com.example.lostbox;
 
 //import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,51 +22,60 @@ import java.util.List;
 
 public class FindFragment extends Fragment {
 
-    private RecyclerView recyclerView;
-    private FindAdapter adapter;
+
+    private RecyclerView recyclerView;   //리사이클러뷰 생성
+    private FindAdapter adapter;   //어댑터 생성
 
    public FindFragment(){
 
    }
 
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-       return inflater.inflate(R.layout.fragment_find, container, false);
-    }
-
+//    @Override
 //    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-//        View view = inflater.inflate(R.layout.fragment_find, container, false);
-//        recyclerView = view.findViewById(R.id.find_recycle);
-//        init();
-//        getData();
-//        return view;
+//       return inflater.inflate(R.layout.fragment_find, container, false);
 //    }
 
-//    private void init(){
-//       recyclerView = getView().findViewById(R.id.find_recycle);
-//
-//       if(recyclerView != null){
-//           LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-//           recyclerView.setLayoutManager(linearLayoutManager);
-//
-//           adapter = new FindAdapter();
-//           recyclerView.setAdapter(adapter);
-//       }
-//
-//    }
-    private void init() {
-        View view = getView(); // View 객체 가져오기
-        recyclerView = view.findViewById(R.id.find_recycle); // recyclerView 초기화
-
-        if(recyclerView != null){
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-            recyclerView.setLayoutManager(linearLayoutManager);
-
-            adapter = new FindAdapter();
-            recyclerView.setAdapter(adapter);
-        }
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_find, container, false);
+        recyclerView = (RecyclerView) view.findViewById(R.id.find_recycle);
+        init();
+        getData();
+        Button btn_findwrite = (Button) view.findViewById(R.id.find_write);
+        btn_findwrite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), FindWrittingActivity.class);
+                startActivity(intent);
+            }
+        });
+        return view;
     }
+
+    private void init(){
+
+       if(recyclerView != null){
+           RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+//           LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+           recyclerView.setLayoutManager(linearLayoutManager);
+
+           adapter = new FindAdapter();
+           recyclerView.setAdapter(adapter);
+       }
+
+    }
+//    private void init() {
+//        View view = getView(); // View 객체 가져오기
+//        recyclerView = view.findViewById(R.id.find_recycle); // recyclerView 초기화
+//
+//        if(recyclerView != null){
+//            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+//            recyclerView.setLayoutManager(linearLayoutManager);
+//
+//            adapter = new FindAdapter();
+//            recyclerView.setAdapter(adapter);
+//        }
+//    }
 
     private void getData(){
         List<String> listTitle = Arrays.asList("테스트 1", " 테스트 2", "테스트 3", "테스트 4", "테스트 5");
@@ -98,5 +111,4 @@ public class FindFragment extends Fragment {
         adapter.notifyDataSetChanged();
 
     }
-
 }
