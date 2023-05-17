@@ -51,7 +51,7 @@
                 android:value="" />
         </activity>
 
-        <activity android:name=".FindWrittingActivity"
+        <activity android:name=".FindWritingActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
