@@ -1,17 +1,20 @@
 package com.example.lostbox;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class FindAdapter extends RecyclerView.Adapter<FindAdapter.ViewHolder> {
     private ArrayList<FindItem> findItems = new ArrayList<>(); // adapter에 들어갈 list
+
 //    private Context context;
 
 //    public FindAdapter(ArrayList<FindItem> findItems, Context context) {
@@ -31,12 +34,21 @@ public class FindAdapter extends RecyclerView.Adapter<FindAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {  // 아이템을 하나, 하나 보여주는 함수?
 //        FindItem currentItem = findItems.get(position);
         holder.onBind(findItems.get(position));
-
 //        holder.imageView.setImageResource(currentItem.getImg());
 //        holder.textView1.setText(currentItem.getTitle());
 //        holder.textView2.setText(currentItem.getPlace());
 //        holder.textView3.setText(currentItem.getDate());
 //        holder.textView4.setText(currentItem.getContent());
+
+//        holder.cardView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                int mPosition = holder.getAdapterPosition();
+//
+//                Context context =   view.getContext();
+//                Intent detailActivity = new Intent(context, DetailActivity.class);
+//            }
+//        });
     }
 
     @Override
@@ -56,6 +68,7 @@ public class FindAdapter extends RecyclerView.Adapter<FindAdapter.ViewHolder> {
         public TextView textView2;
         public TextView textView3;
         public TextView textView4;
+        CardView cardView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
