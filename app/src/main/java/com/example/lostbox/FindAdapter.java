@@ -1,16 +1,16 @@
 package com.example.lostbox;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.bumptech.glide.Glide;
-
 import java.util.ArrayList;
 
 public class FindAdapter extends RecyclerView.Adapter<FindAdapter.ViewHolder> {
@@ -21,7 +21,7 @@ public class FindAdapter extends RecyclerView.Adapter<FindAdapter.ViewHolder> {
 
     }
 //    private Context context;
-//
+
 //    public FindAdapter(ArrayList<FindItem> findItems, Context context) {
 //        this.findItems = findItems;
 //        this.context = context;
@@ -48,7 +48,6 @@ public class FindAdapter extends RecyclerView.Adapter<FindAdapter.ViewHolder> {
 
 //        FindItem currentItem = findItems.get(position);
         //holder.onBind(findItems.get(position));
-
 //        holder.imageView.setImageResource(currentItem.getImg());
 //        holder.textView1.setText(currentItem.getTitle());
 //        holder.textView2.setText(currentItem.getPlace());
@@ -58,6 +57,7 @@ public class FindAdapter extends RecyclerView.Adapter<FindAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {  //recyclerview의 총 개수
+        //return findItems.size();
         return (findItems != null ? findItems.size() : 0);
     }
 
@@ -73,6 +73,7 @@ public class FindAdapter extends RecyclerView.Adapter<FindAdapter.ViewHolder> {
         public TextView tv_place;
         public TextView tv_date;
         public TextView tv_content;
+        CardView cardView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
