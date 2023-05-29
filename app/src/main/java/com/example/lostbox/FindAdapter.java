@@ -40,15 +40,23 @@ public class FindAdapter extends RecyclerView.Adapter<FindAdapter.ViewHolder> {
 //        holder.textView3.setText(currentItem.getDate());
 //        holder.textView4.setText(currentItem.getContent());
 
-//        holder.cardView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                int mPosition = holder.getAdapterPosition();
-//
-//                Context context =   view.getContext();
-//                Intent detailActivity = new Intent(context, DetailActivity.class);
-//            }
-//        });
+        holder.itemView.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                int mPosition = holder.getAdapterPosition();
+                Context context = view.getContext();
+                Intent detailActivity = new Intent(context, DetailActivity.class);
+
+                detailActivity.putExtra("title", findItems.get(mPosition).getTitle());
+                detailActivity.putExtra("image", findItems.get(mPosition).getImg());
+                detailActivity.putExtra("ex", findItems.get(mPosition).getContent());
+                detailActivity.putExtra("date", findItems.get(mPosition).getDate());
+                detailActivity.putExtra("place", findItems.get(mPosition).getPlace());
+
+                context.startActivity(detailActivity);
+
+            }
+
+        });
     }
 
     @Override
