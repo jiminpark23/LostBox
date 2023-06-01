@@ -62,21 +62,10 @@ public class FindFragment extends Fragment {
        }
 
     }
-//    private void init() {
-//        View view = getView(); // View 객체 가져오기
-//        recyclerView = view.findViewById(R.id.find_recycle); // recyclerView 초기화
-//
-//        if(recyclerView != null){
-//            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-//            recyclerView.setLayoutManager(linearLayoutManager);
-//
-//            adapter = new FindAdapter();
-//            recyclerView.setAdapter(adapter);
-//        }
-//    }
+
 
     private void getData(){
-        List<String> listTitle = Arrays.asList("테스트 1", " 테스트 2", "테스트 3", "테스트 4", "테스트 5");
+        List<String> listTitle = Arrays.asList("테스트 1", "테스트 2", "테스트 3", "테스트 4", "테스트 5");
         List<String> listPlace = Arrays.asList("단국대 1", "단국대 2", "단국대 3", "단국대 4", "단국대 5");
         List<String> listDate = Arrays.asList("2020-01-01", "2021-01-01", "2022-01-01", "2023-01-01","2024-01-01");
         List<String> listContent = Arrays.asList(
