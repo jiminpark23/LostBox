@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "825238087928",
+    "firebase_url": "https://lostbox-c5ed1-default-rtdb.firebaseio.com",
+    "project_id": "lostbox-c5ed1",
+    "storage_bucket": "lostbox-c5ed1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:825238087928:android:ac233669a25364875cb30d",
+        "android_client_info": {
+          "package_name": "com.example.lostbox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "825238087928-rn88s2383usttg35hctdub5n9q8nmua1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lostbox",
+            "certificate_hash": "95641d4e3c4ab4cdd21e558455b428cfea36fa2a"
+          }
+        },
+        {
+          "client_id": "825238087928-llton4dllrqqa9teehilku5l5i70d358.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjV6tygTtxjm3avcLZshgkviH2fnQe_MU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "825238087928-llton4dllrqqa9teehilku5l5i70d358.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
