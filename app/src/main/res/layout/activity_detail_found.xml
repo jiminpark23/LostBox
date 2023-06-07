@@ -36,7 +36,7 @@
             android:layout_marginRight="40sp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="찾아요"
+            android:text="찾았어요"
             android:textColor="#000000"
             android:textSize="24sp" />
     </LinearLayout>
@@ -102,7 +102,7 @@
         android:layout_marginTop="40dp"
         android:text="2023-05-22"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toEndOf="@+id/textView17"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
 
@@ -114,7 +114,7 @@
         android:layout_marginTop="12dp"
         android:text="2023-05-22"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toEndOf="@+id/textView11"
         app:layout_constraintTop_toBottomOf="@+id/detail_date" />
 
@@ -124,7 +124,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="116dp"
         android:layout_marginTop="12dp"
-        android:text="분실 장소:"
+        android:text="찾은 장소:"
         android:textColor="#000000"
         app:layout_constraintStart_toEndOf="@+id/detail_ctg"
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
@@ -133,9 +133,9 @@
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="56dp"
         android:layout_marginTop="40dp"
-        android:text="잃어버린 날짜:"
+        android:text="찾은 날짜: "
         android:textColor="#000000"
         app:layout_constraintStart_toEndOf="@+id/title_detail"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
@@ -160,27 +160,6 @@
             android:text="닉네임"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView19"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="172dp"
-            android:layout_marginTop="16dp"
-            android:text="사례금(원):"
-            android:textColor="#000000"
-            app:layout_constraintStart_toEndOf="@+id/textView16"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/detail_money"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="16dp"
-            android:text="10000"
-            app:layout_constraintStart_toEndOf="@+id/textView19"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

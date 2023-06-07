@@ -1,5 +1,7 @@
 package com.example.lostbox;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +31,24 @@ public class FoundAdapter extends RecyclerView.Adapter<FoundAdapter.ViewHolder> 
 //        holder.textView2.setText(currentItem.getPlace());
 //        holder.textView3.setText(currentItem.getDate());
 //        holder.textView4.setText(currentItem.getContent());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                int mPosition = holder.getAdapterPosition();
+                Context context = view.getContext();
+                Intent detailActivity = new Intent(context, FoundDetailActivity.class);
+
+                detailActivity.putExtra("title", foundItems.get(mPosition).getTitle());
+                detailActivity.putExtra("image", foundItems.get(mPosition).getImg());
+                detailActivity.putExtra("ex", foundItems.get(mPosition).getContent());
+                detailActivity.putExtra("date", foundItems.get(mPosition).getDate());
+                detailActivity.putExtra("place", foundItems.get(mPosition).getPlace());
+
+                context.startActivity(detailActivity);
+
+            }
+
+        });
     }
 
     public int getItemCount() {  //recyclerview의 총 개수
