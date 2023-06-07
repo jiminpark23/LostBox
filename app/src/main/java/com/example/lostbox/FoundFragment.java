@@ -39,7 +39,7 @@ public class FoundFragment extends Fragment {
         btn_findwrite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), FindWrittingActivity.class);
+                Intent intent = new Intent(getActivity(), FindWritingActivity.class);
                 startActivity(intent);
             }
         });
