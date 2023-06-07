@@ -4,27 +4,26 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class DetailActivity extends AppCompatActivity {
-    TextView detail_title, detail_money, detail_ex, detail_date, detail_place, detail_ctg;
-    ImageView detail_image;
-    String title, money, ex, date, place, category;
+public class FoundDetailActivity extends AppCompatActivity {
+    TextView fdetail_title, fdetail_ex, fdetail_date, fdetail_place;
+    ImageView fdetail_image;
+    String title, ex, date, place;
     int image;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
+        setContentView(R.layout.activity_detail_found);
 
-        detail_title = findViewById(R.id.title_detail);
-        detail_image = findViewById(R.id.image_detail);
-        detail_money = findViewById(R.id.detail_money);
-        detail_ex = findViewById(R.id.detail_text);
-        detail_place = findViewById(R.id.detail_place);
-        detail_date = findViewById(R.id.detail_date);
+        fdetail_title = findViewById(R.id.title_detail);
+        fdetail_image = findViewById(R.id.image_detail);
+        //detail_money = findViewById(R.id.detail_money);
+        fdetail_ex = findViewById(R.id.detail_text);
+        fdetail_place = findViewById(R.id.detail_place);
+        fdetail_date = findViewById(R.id.detail_date);
 
         //엑티비이에서 받아온 데이터
         Intent intent = getIntent();
@@ -35,15 +34,13 @@ public class DetailActivity extends AppCompatActivity {
         date = intent.getExtras().getString("date");
         place = intent.getExtras().getString("place");
         image = intent.getExtras().getInt("image");
-        category = intent.getExtras().getString("category");
 
-        detail_title.setText(title);
-        detail_image.setImageResource(image);
+        fdetail_title.setText(title);
+        fdetail_image.setImageResource(image);
         //detail_money.setText(money);
-        detail_ex.setText(ex);
-        detail_place.setText(place);
-        detail_date.setText(date);
-        detail_ctg.setText(category);
+        fdetail_ex.setText(ex);
+        fdetail_place.setText(place);
+        fdetail_date.setText(date);
 
         TextView btn_back =(TextView) findViewById(R.id.btn_back);
         btn_back.setOnClickListener(new View.OnClickListener() {

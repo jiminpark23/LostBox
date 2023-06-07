@@ -5,16 +5,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class FindWrittingActivity extends AppCompatActivity {
+public class FoundWrittingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_writting);
+        setContentView(R.layout.activity_writting_found);
 
 
         TextView btn_back =(TextView) findViewById(R.id.btn_back);
@@ -42,5 +43,11 @@ public class FindWrittingActivity extends AppCompatActivity {
                 // 선택이 해제됐을 때 수행할 작업을 추가하거나 무시
             }
         });
+
+        EditText editTitle = (EditText)findViewById(R.id.editTitle);
+        EditText editPlace = (EditText) findViewById(R.id.editPlace);
+        EditText editDate = (EditText)findViewById(R.id.editDate);
+        EditText editEx = (EditText) findViewById(R.id.editEx);
+
     }
 }

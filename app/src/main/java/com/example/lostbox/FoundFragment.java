@@ -39,7 +39,7 @@ public class FoundFragment extends Fragment {
         btn_findwrite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), FindWrittingActivity.class);
+                Intent intent = new Intent(getActivity(), FoundWrittingActivity.class);
                 startActivity(intent);
             }
         });
@@ -59,22 +59,24 @@ public class FoundFragment extends Fragment {
 
     }
     private void getData(){
-        List<String> listTitle = Arrays.asList("테스트 1", " 테스트 2", "테스트 3", "테스트 4", "테스트 5");
+        List<String> listTitle = Arrays.asList("자전거 주인", "지갑 주웠음", "강아지 찾음", "이어폰 주인", "지갑 주인");
         List<String> listPlace = Arrays.asList("단국대 1", "단국대 2", "단국대 3", "단국대 4", "단국대 5");
-        List<String> listDate = Arrays.asList("2020-01-01", "2021-01-01", "2022-01-01", "2023-01-01","2024-01-01");
+        List<String> listDate = Arrays.asList("2023-01-01", "2023-02-15", "2023-03-21", "2023-05-31","2023-06-06");
         List<String> listContent = Arrays.asList(
-                "자전거1를 잃어버렸습니다.",
-                "자전거2를 잃어버렸습니다.",
-                "자전거3를 잃어버렸습니다.",
-                "자전거4를 잃어버렸습니다.",
-                "자전거5를 잃어버렸습니다."
+                "자전거를 찾았습니다.",
+                "지갑을 찾았습니다.",
+                "강아지를 찾았습니다.",
+                "이어폰 찾았습니다.",
+                "지갑을 찾았습니다."
         );
         List<Integer> listImg = Arrays.asList(R.drawable.bicycle1,
-                R.drawable.bicycle2,
-                R.drawable.bicycle3,
-                R.drawable.bicycle4,
-                R.drawable.bicycle5
+                R.drawable.wallet,
+                R.drawable.dog,
+                R.drawable.earphone,
+                R.drawable.wallet2
         );
+
+
         for (int i = 0; i < listTitle.size(); i++) {
             // 각 List의 값들을 data 객체에 set 해줍니다.
             FoundItem data = new FoundItem();
