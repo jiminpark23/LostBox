@@ -15,11 +15,21 @@ import java.util.ArrayList;
 
 public class FindAdapter extends RecyclerView.Adapter<FindAdapter.ViewHolder> {
 
-    private ArrayList<FindItem> findItems = new ArrayList<>(); // adapter에 들어갈 list
+    //private ArrayList<FindItem> findItems = new ArrayList<>(); // adapter에 들어갈 list
 
-    public FindAdapter(ArrayList<FindItem> findItemArrayList, Context context) {
+    //public FindAdapter(ArrayList<FindItem> findItemArrayList, Context context) {
 
+    //}
+
+    private ArrayList<FindItem> findItems;
+    private Context context;
+
+    public FindAdapter(ArrayList<FindItem> findItems, Context context) {
+        this.findItems = findItems;
+        this.context = context;
     }
+
+
 //    private Context context;
 
 //    public FindAdapter(ArrayList<FindItem> findItems, Context context) {

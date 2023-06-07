@@ -55,12 +55,12 @@ public class MyPageFragment extends Fragment implements View.OnClickListener {
         userRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                // 사용자 이름을 가져와서 TextView에 설정
+                // 사용자 id를 가져와서 TextView에 설정
                 if (snapshot.exists()) {
                     UserAccount user = snapshot.getValue(UserAccount.class);
                     if (user != null) {
-                        String name = user.getName();
-                        nickname.setText(name);
+                        String id = user.getId();
+                        nickname.setText(id); // id 또는 name 가져오기
                     }
                 }
             }

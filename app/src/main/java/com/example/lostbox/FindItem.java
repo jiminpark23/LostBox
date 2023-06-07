@@ -4,6 +4,7 @@ public class FindItem {
     private String title;
     private String place;
     private String date;
+    private String pay;
     private String content;
     private String img;
 
@@ -48,6 +49,12 @@ public class FindItem {
     public void setImg(String img) {
         this.img = img;
     }
+
+    public String getPay() {
+        return pay;
+    }
+
+    public void setPay(String pay) { this.pay = pay; }
 }
 //    public FindItem(String title, String place, String date, String content, String img) {
 //        this.title = title;

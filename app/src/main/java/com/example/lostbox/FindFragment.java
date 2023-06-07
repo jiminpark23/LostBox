@@ -23,29 +23,34 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class FindFragment extends Fragment { //FindFragment<findItems> extends Fragment {
 
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
+    //private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private ArrayList<FindItem> findItemArrayList;
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
+    private FindAdapter adapter;
 
-   }
+
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_find, container, false);
         recyclerView = (RecyclerView) view.findViewById(R.id.find_recycle);
 
-        recyclerView = view.findViewById(R.id.find_recycle);
+        //recyclerView = view.findViewById(R.id.find_recycle);
         recyclerView.setHasFixedSize(true); // 리사이클러뷰 기존 성능 강화
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         findItemArrayList = new ArrayList<>();  // findItem 객체를 담을 어레이 리스트 (어댑터 쪽으로 날림)
 
+        adapter = new FindAdapter(findItemArrayList, requireContext());
+        recyclerView.setAdapter(adapter);   // 리사이클러뷰에 어댑터 연결
 
         Button btn_findWrite = (Button) view.findViewById(R.id.find_write);
         btn_findWrite.setOnClickListener(new View.OnClickListener() {
@@ -68,9 +73,7 @@ public class FindFragment extends Fragment { //FindFragment<findItems> extends F
                 findItemArrayList.clear();  //기존 배열 리스트가 존재하지 않도록 초기화
                 for (DataSnapshot childSnapshot : snapshot.getChildren()) {  // 반복문으로 데이터 List를 추출해냄
                     FindItem findItem = childSnapshot.getValue(FindItem.class);  // 만들어뒀던 FindItem 객체에 데이터를 담는다
-                    //findItems findItems = snapshot.getValue(findItems);     // 만들어뒀던 findItem 객체에 데이터를 담는다
                     findItemArrayList.add(findItem);   // 담을 데이터들을 배열리스트에 넣고 리사이클러뷰로 보낼 준비
-
                 }
                 adapter.notifyDataSetChanged(); // 리스트 저장 및 새로고침
 
@@ -83,15 +86,10 @@ public class FindFragment extends Fragment { //FindFragment<findItems> extends F
             }
         });
 
-        adapter = new FindAdapter(findItemArrayList, requireContext());
-        recyclerView.setAdapter(adapter);   // 리사이클러뷰에 어댑터 연결
+//        adapter = new FindAdapter(findItemArrayList, requireContext());
+//        recyclerView.setAdapter(adapter);   // 리사이클러뷰에 어댑터 연결
 
         return view;
-    }
-
-
-}
-
     }
 
 
@@ -119,7 +117,7 @@ public class FindFragment extends Fragment { //FindFragment<findItems> extends F
             data.setPlace(listPlace.get(i));
             data.setDate(listDate.get(i));
             data.setContent(listContent.get(i));
-            data.setImg(listImg.get(i));
+            data.setImg(String.valueOf(listImg.get(i)));
 
             // 각 값이 들어간 data를 adapter에 추가합니다.
             adapter.addItem(data);

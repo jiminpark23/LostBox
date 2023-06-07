@@ -81,6 +81,6 @@
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_weight="1"
-        app:srcCompat="@android:drawable/ic_menu_camera" />
+        android:src="@android:drawable/ic_menu_camera" />
 
 </LinearLayout>
