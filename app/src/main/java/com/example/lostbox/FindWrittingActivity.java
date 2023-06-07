@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class FindWrittingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_writting);
+        setContentView(R.layout.activity_find_writing);
 
 
         TextView btn_back =(TextView) findViewById(R.id.btn_back);

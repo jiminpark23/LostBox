@@ -75,8 +75,6 @@ public class FoundFragment extends Fragment {
                 R.drawable.earphone,
                 R.drawable.wallet2
         );
-
-
         for (int i = 0; i < listTitle.size(); i++) {
             // 각 List의 값들을 data 객체에 set 해줍니다.
             FoundItem data = new FoundItem();

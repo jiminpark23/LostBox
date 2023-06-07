@@ -70,7 +70,7 @@
         app:layout_constraintVertical_bias="0.013" />
 
     <EditText
-        android:id="@+id/editTitle"
+        android:id="@+id/et_find_title"
         android:layout_width="wrap_content"
         android:layout_height="45dp"
         android:layout_marginTop="28dp"
@@ -83,7 +83,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <EditText
-        android:id="@+id/editDate"
+        android:id="@+id/et_find_date"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
@@ -91,13 +91,13 @@
         android:ems="10"
         android:hint="날짜"
         android:inputType="date"
-        app:layout_constraintEnd_toStartOf="@+id/editPlace"
+        app:layout_constraintEnd_toStartOf="@+id/et_find_place"
         app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/et_find_title" />
 
     <EditText
-        android:id="@+id/editPlace"
+        android:id="@+id/et_find_place"
         android:layout_width="160dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
@@ -107,7 +107,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.876"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/et_find_title" />
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
@@ -120,12 +120,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.099"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editDate" />
+        app:layout_constraintTop_toBottomOf="@+id/et_find_date" />
 
     <EditText
-        android:id="@+id/editEx"
+        android:id="@+id/et_find_content"
         android:layout_width="350dp"
         android:layout_height="160dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="세부정보"
@@ -134,8 +135,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.442"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
-        app:layout_constraintVertical_bias="0.18" />
+        app:layout_constraintTop_toBottomOf="@+id/et_find_pay"
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button2"
@@ -149,7 +150,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editEx"
+        app:layout_constraintTop_toBottomOf="@+id/et_find_content"
         app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
@@ -176,7 +177,7 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.013"
+        app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
         app:layout_constraintVertical_bias="0.0" />
